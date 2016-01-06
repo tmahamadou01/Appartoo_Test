@@ -18,7 +18,7 @@ use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
-class SecurityController extends
+class SecurityController extends Controller
 {
     public function loginAction(Request $request)
     {

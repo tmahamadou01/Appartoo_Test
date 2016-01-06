@@ -1,0 +1,28 @@
+
+    <table class="records_list">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Telephone</th>
+            <th>email</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in entities %}
+            <tr>
+
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.telephone }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <form action="#">
+                        <input type="submit" name="" id="" value="Ajouter à mes contacts">
+                    </form>
+                    
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>

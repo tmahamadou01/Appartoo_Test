@@ -8,3 +8,8 @@ services:
         class: AppartooBundle\Form\Type\RegistrationFormType
         tags:
             - { name: form.type, alias: app_user_registration }
+
+    app.form.profile:
+        class: AppartooBundle\Form\Type\ProfileFormType
+        tags:
+            - { name: form.type, alias: app_user_profile }

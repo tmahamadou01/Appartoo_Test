@@ -11,6 +11,9 @@
 
         <field name="telephone" column="telephone" type="integer" length="8" nullable="true" />
         <field name="siteweb" column="siteweb" type="string" length="255" nullable="true" />
+        <field name="adresse" column="adresse" type="string" length="255" nullable="true" />
+        <field name="nom" column="nom" type="string" length="255" nullable="true" />
+        <field name="prenom" column="prenom" type="string" length="255" nullable="true" />
 
     </entity>
 </doctrine-mapping>

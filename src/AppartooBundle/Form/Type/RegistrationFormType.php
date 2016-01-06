@@ -20,15 +20,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class RegistrationFormType extends AbstractType
 {
-//    private $class;
 
-    /**
-     * @param string $class The User class name
-     */
-//    public function __construct($class)
-//    {
-//        $this->class = $class;
-//    }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -44,41 +36,11 @@ class RegistrationFormType extends AbstractType
             ))
             ->add('telephone')
             ->add('siteweb')
+            ->add('adresse')
         ;
     }
 
-//    public function configureOptions(OptionsResolver $resolver)
-//    {
-//        $resolver->setDefaults(array(
-//            'data_class' => $this->class,
-//            'csrf_token_id' => 'registration',
-//            // BC for SF < 2.8
-//            'intention'  => 'registration',
-//        ));
-//    }
-//    public function getParent()
-//    {
-//        return 'AppartooBundle\Form\Type\RegistrationFormType';
-//
-//        // Or for Symfony < 2.8
-//        // return 'fos_user_registration';
-//    }
-//    // BC for SF < 2.7
-//    public function setDefaultOptions(OptionsResolverInterface $resolver)
-//    {
-//        $this->configureOptions($resolver);
-//    }
-//
-//    // BC for SF < 3.0
-//    public function getName()
-//    {
-//        return $this->getBlockPrefix();
-//    }
-//
-//    public function getBlockPrefix()
-//    {
-//        return 'app_user_registration';
-//    }
+
     public function getParent()
     {
         return 'fos_user_registration';
