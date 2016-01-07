@@ -1,9 +1,9 @@
 .fos_user_user_show{
     padding-top: 100px;
-    background-color: #dadada;
-    width: 300px;
+    width: 500px;
     height: 300px;
     margin-left: 300px;
+    font-size: 18px;
 }
 .form-signin input[type="text"] {
     margin-bottom: 5px;

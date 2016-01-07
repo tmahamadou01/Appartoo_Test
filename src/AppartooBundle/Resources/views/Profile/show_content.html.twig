@@ -2,12 +2,12 @@
 
 <div class="fos_user_user_show">
 
-    <p>Nom : {{ user.nom }}</p>
-    <p>Prenom : {{ user.prenom }}</p>
-    <p>Email : {{ user.email }}</p>
-    <p>Adresse : {{ user.adresse }}</p>
-    <p>Site Web : {{ user.siteweb }}</p>
-    <p>Telephone : {{ user.telephone }}</p>
+    <p><b>Nom :</b> {{ user.nom }}</p>
+    <p><b>Prenom :</b> {{ user.prenom }}</p>
+    <p><b>Email :</b> {{ user.email }}</p>
+    <p><b>Adresse :</b> {{ user.adresse }}</p>
+    <p><b>Site Web :</b> {{ user.siteweb }}</p>
+    <p><b>Telephone :</b> {{ user.telephone }}</p>
 
     <a href="{{ path('fos_user_profile_edit', { 'id': user.id }) }}">Editer son Profil</a>
 

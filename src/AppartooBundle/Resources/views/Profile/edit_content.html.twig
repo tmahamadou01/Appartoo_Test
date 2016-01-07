@@ -11,10 +11,10 @@
 <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST">
     <div class="form-group" id="fos_user_registration_form">
 
-        {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder': 'Nom' } }) }}
+        {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder': 'Entrez votre Nom' } }) }}
         {{ form_errors(form.nom) }}
 
-        {{ form_widget(form.prenom, { 'attr': {'class': 'form-control', 'placeholder': 'Prenom' } }) }}
+        {{ form_widget(form.prenom, { 'attr': {'class': 'form-control', 'placeholder': 'Entrez votre Prenom' } }) }}
         {{ form_errors(form.prenom) }}
 
         {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'form.email'|trans } }) }}
