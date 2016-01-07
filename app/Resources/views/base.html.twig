@@ -43,7 +43,7 @@
                             <a href="{{ path('fos_user_profile_show') }}">PROFIL</a>
                         </li>
                         <li>
-                            <a href="{{ path('fos_user_security_logout') }}">LOGOUT</a>
+                            <a href="{{ path('fos_user_security_logout') }}">LOGOUT ({{ app.user |upper}})</a>
                         </li>
 
                     {% else %}
