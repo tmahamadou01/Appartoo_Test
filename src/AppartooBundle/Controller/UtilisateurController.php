@@ -2,7 +2,10 @@
 
 namespace AppartooBundle\Controller;
 
+use AppartooBundle\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class UtilisateurController extends Controller
 {
@@ -16,5 +19,64 @@ class UtilisateurController extends Controller
             'entities' => $entities,
         ));
     }
+    public function inscriptionAction($id)
+    {
+
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+
+        $em->getRepository('AppartooBundle:Contact')->findOneBy(array('id' => $id));
+
+        // Inscription
+        $entity = new Contact();
+
+        $entity->setUser($user);
+        $entity->setIdContact($id);
+        $em->persist($entity);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('appartoo_homepage'));
+    }
+
+    public function contactAction($id = null)
+    {
+        $modelcontact = [];
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $this->getUser();
+
+        $contacts = $em->getRepository('AppartooBundle:Contact')->findByUser($user);
+        $con = $em->getRepository('AppartooBundle:User')->findAll();
+        foreach ($contacts as $contact){
+            foreach ($con as $co){
+                if ($co->getId() == $contact->getIdContact()) {
+                    $modelcontact[$contact->getId()] = $co;
+                }
+            }
+        }
+
+        return $this->render('AppartooBundle:Default:contacts.html.twig', array(
+            'contacts'   => $modelcontact,
+            'user'     => $user,
+            'con'   => $con
+        ));
+    }
+
+    public function deleteAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('AppartooBundle:Contact')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find contact entity.');
+        }
+
+        $em->remove($entity);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('appartoo_home'));
+    }
+
 }
 

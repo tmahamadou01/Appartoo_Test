@@ -1,5 +1,7 @@
 {% extends "::base.html.twig" %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/appartoo/css/style.css') }}">
+{% endblock %}
 {% block body %}
     {% block fos_user_content %}
     {% include "FOSUserBundle:Registration:register_content.html.twig" %}

@@ -76,7 +76,7 @@ fos_user:
         form:
             type: AppartooBundle\Form\Type\RegistrationFormType
         confirmation:
-            enabled: true
+            enabled: false
     profile:
         form:
             type: app_user_profile

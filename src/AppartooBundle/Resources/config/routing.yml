@@ -2,6 +2,21 @@ appartoo_homepage:
     path:     /
     defaults: { _controller: AppartooBundle:Default:index }
 
-appartoo:
+appartoo_list:
     path:     /list
     defaults: { _controller: AppartooBundle:Utilisateur:index }
+
+appartoo_inscription:
+    path: /inscription/{id}
+    defaults: { _controller: AppartooBundle:Utilisateur:inscription }
+    methods:  [POST, GET]
+
+appartoo_contact:
+    path: /contact
+    defaults: { _controller: AppartooBundle:Utilisateur:contact }
+    methods:  [POST, GET]
+
+appartoo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: AppartooBundle:Utilisateur:delete }
+    methods:  [POST, GET]
