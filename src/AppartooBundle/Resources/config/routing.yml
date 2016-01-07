@@ -1,6 +1,6 @@
 appartoo_homepage:
     path:     /
-    defaults: { _controller: AppartooBundle:Default:index }
+    defaults: { _controller: AppartooBundle:Security:login }
 
 appartoo_list:
     path:     /list
