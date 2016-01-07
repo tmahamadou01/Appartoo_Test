@@ -25,17 +25,18 @@ class UtilisateurController extends Controller
         $user = $this->getUser();
         $em = $this->getDoctrine()->getManager();
 
-        $em->getRepository('AppartooBundle:Contact')->findOneBy(array('id' => $id));
+        if($em->getRepository('AppartooBundle:Contact')->findOneBy(array('idContact' => $id, 'user' => $user)) == NULL ) {
 
-        // Inscription
-        $entity = new Contact();
+            // Inscription
+            $entity = new Contact();
+            $entity->setUser($user);
+            $entity->setIdContact($id);
 
-        $entity->setUser($user);
-        $entity->setIdContact($id);
-        $em->persist($entity);
-        $em->flush();
+            $em->persist($entity);
+            $em->flush();
 
-        return $this->redirect($this->generateUrl('appartoo_homepage'));
+        }
+        return $this->redirect($this->generateUrl('appartoo_list'));
     }
 
     public function contactAction($id = null)
@@ -66,7 +67,7 @@ class UtilisateurController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-        $entity = $em->getRepository('AppartooBundle:Contact')->find($id);
+        $entity = $em->getRepository('AppartooBundle:Contact')->findOneBy(array('idContact' => $id));
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find contact entity.');
@@ -75,8 +76,9 @@ class UtilisateurController extends Controller
         $em->remove($entity);
         $em->flush();
 
-        return $this->redirect($this->generateUrl('appartoo_home'));
+        return $this->redirect($this->generateUrl('appartoo_contact'));
     }
+
 
 }
 

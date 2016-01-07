@@ -13,3 +13,9 @@ services:
         class: AppartooBundle\Form\Type\ProfileFormType
         tags:
             - { name: form.type, alias: app_user_profile }
+    app_success_handler:
+        class: AppartooBundle\Services\AuthenticationHandler
+        arguments: [@router]
+    app_logout_handler:
+        class: AppartooBundle\Services\AuthenticationHandler
+        arguments: [@router]

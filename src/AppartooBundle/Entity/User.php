@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 class User extends BaseUser
 {
 
+  
     /**
      * @var integer
      */
@@ -19,6 +20,26 @@ class User extends BaseUser
      * @var string
      */
     private $siteweb;
+
+    /**
+     * @var string
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     */
+    private $nom;
+
+    /**
+     * @var string
+     */
+    private $prenom;
+
+    /**
+     * @var integer
+     */
+    private $inscrit;
 
 
     /**
@@ -68,11 +89,6 @@ class User extends BaseUser
     {
         return $this->siteweb;
     }
-    /**
-     * @var string
-     */
-    private $adresse;
-
 
     /**
      * Set adresse
@@ -97,16 +113,6 @@ class User extends BaseUser
     {
         return $this->adresse;
     }
-    /**
-     * @var string
-     */
-    private $nom;
-
-    /**
-     * @var string
-     */
-    private $prenom;
-
 
     /**
      * Set nom
@@ -155,33 +161,28 @@ class User extends BaseUser
     {
         return $this->prenom;
     }
-    /**
-     * @var string
-     */
-    private $ma;
-
 
     /**
-     * Set ma
+     * Set inscrit
      *
-     * @param string $ma
+     * @param integer $inscrit
      *
      * @return User
      */
-    public function setMa($ma)
+    public function setInscrit($inscrit)
     {
-        $this->ma = $ma;
+        $this->inscrit = $inscrit;
 
         return $this;
     }
 
     /**
-     * Get ma
+     * Get inscrit
      *
-     * @return string
+     * @return integer
      */
-    public function getMa()
+    public function getInscrit()
     {
-        return $this->ma;
+        return $this->inscrit;
     }
 }

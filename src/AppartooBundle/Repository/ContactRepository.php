@@ -10,14 +10,13 @@ namespace AppartooBundle\Repository;
  */
 class ContactRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findByContact($id_contact)
-    {
-        $query = $this->createQueryBuilder('c')
-            ->leftJoin('c.id_contact', 'u')
-            ->where('u.id = :parameter')
-            ->setParameter('parameter', $id_contact)
-            ->getQuery();
 
-        return $query->getResult();
+    public function findByContact($id)
+    {
+        $qb = $this->$em->createQueryBuilder();
+        $qb->delete('Contact', 'c');
+        $qb->andWhere($qb->expr()->eq('c.id', ':id'));
+        $qb->setParameter(':id', $id);
     }
+
 }

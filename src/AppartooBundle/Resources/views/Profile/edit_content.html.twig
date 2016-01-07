@@ -1,8 +1,50 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+{#{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}#}
+    {#{{ form_widget(form) }}#}
+    {#<div>#}
+        {#<input type="submit" value="{{ 'profile.edit.submit'|trans }}" />#}
+    {#</div>#}
+{#{{ form_end(form) }}#}
+<h1 align="center">Editer ton Profil</h1>
+
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST">
+    <div class="form-group" id="fos_user_registration_form">
+
+        {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder': 'Nom' } }) }}
+        {{ form_errors(form.nom) }}
+
+        {{ form_widget(form.prenom, { 'attr': {'class': 'form-control', 'placeholder': 'Prenom' } }) }}
+        {{ form_errors(form.prenom) }}
+
+        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'form.email'|trans } }) }}
+        {{ form_errors(form.email) }}
+
+        {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'form.username'|trans } }) }}
+        {{ form_errors(form.username) }}
+{#
+        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'form.password'|trans } }) }}
+        {{ form_errors(form.plainPassword.first) }}
+
+        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'form.password_confirmation'|trans } }) }}
+        {{ form_errors(form.plainPassword.second) }#}
+
+
+
+        {{ form_widget(form.telephone, { 'attr': {'class': 'form-control', 'placeholder': 'Telephone', 'label':'Telephone' } }) }}
+        {{ form_errors(form.telephone) }}
+
+        {{ form_widget(form.siteweb, { 'attr': {'class': 'form-control', 'placeholder': 'Site Web' } }) }}
+        {{ form_errors(form.siteweb) }}
+
+        {{ form_widget(form.adresse, { 'attr': {'class': 'form-control', 'placeholder': 'Adresse' } }) }}
+        {{ form_errors(form.adresse) }}
+
+        {{ form_rest(form) }}
+
     </div>
-{{ form_end(form) }}
+    <div class="form-group inp">
+
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Editer">
+    </div>
+</form>

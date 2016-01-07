@@ -15,5 +15,6 @@
         <field name="nom" column="nom" type="string" length="255" nullable="true" />
         <field name="prenom" column="prenom" type="string" length="255" nullable="true" />
 
+
     </entity>
 </doctrine-mapping>

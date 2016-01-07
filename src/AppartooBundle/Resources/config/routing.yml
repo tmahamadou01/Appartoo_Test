@@ -17,6 +17,6 @@ appartoo_contact:
     methods:  [POST, GET]
 
 appartoo_delete:
-    path:     /{id}/delete
+    path:     /contact/{id}/delete
     defaults: { _controller: AppartooBundle:Utilisateur:delete }
     methods:  [POST, GET]

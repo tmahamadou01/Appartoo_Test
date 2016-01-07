@@ -1,12 +1,14 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <div class="fos_user_user_show">
-    <p>pseudo : {{ user.username }}</p>
-    <p>Adresse email : {{ user.nom }}</p>
-    <p>Adresse email : {{ user.prenom }}</p>
-    <p>Adresse email : {{ user.email }}</p>
-    <p>Adresse email : {{ user.adresse }}</p>
-    <p>Adresse email : {{ user.siteweb }}</p>
-    <p>Adresse email : {{ user.telephone }}</p>
+
+    <p>Nom : {{ user.nom }}</p>
+    <p>Prenom : {{ user.prenom }}</p>
+    <p>Email : {{ user.email }}</p>
+    <p>Adresse : {{ user.adresse }}</p>
+    <p>Site Web : {{ user.siteweb }}</p>
+    <p>Telephone : {{ user.telephone }}</p>
+
+    <a href="{{ path('fos_user_profile_edit', { 'id': user.id }) }}">Editer son Profil</a>
 
 </div>

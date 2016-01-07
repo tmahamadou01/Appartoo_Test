@@ -4,7 +4,7 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="idContact" type="integer" column="id_contact" nullable="false">
+    <field name="idContact" type="integer" column="id_contact" nullable="false" unique="true">
       <options>
         <option name="unsigned"/>
       </options>

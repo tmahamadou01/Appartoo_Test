@@ -11,7 +11,8 @@
             <th>Nom</th>
             <th>Prenom</th>
             <th>Telephone</th>
-            <th>email</th>
+            <th>Email</th>
+            <th>Adresse</th>
         </tr>
         </thead>
         <tbody>
@@ -23,9 +24,10 @@
                 <td>{{ contact.prenom }}</td>
                 <td>{{ contact.telephone }}</td>
                 <td>{{ contact.email }}</td>
+                <td>{{ contact.adresse }}</td>
                 <td>
                     <form action="#">
-                        <a href="{{ path('appartoo_delete', { 'id': contact.id }) }}" onclick="return confirm('Voulez vous Réelement Supprimer ce projet?')">Supprimer </a>
+                        <a href="{{ path('appartoo_delete', { 'id': contact.id }) }}" onclick="return confirm('Voulez vous Réelement Supprimer ce Contact ?')">Supprimer </a>
                     </form>
 
                 </td>
